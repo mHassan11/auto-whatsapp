@@ -3,6 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.chrome.options import Options
 
 import time
+from pathlib import Path
 
 options = Options()
 options.add_argument('--user-data-dir=./User_Data')
@@ -18,7 +19,7 @@ def send_message(name, msg):
 
 		print("Writing msg")
 		wait = WebDriverWait(driver = driver, timeout = 90)
-		time.sleep(5)
+		time.sleep(10)
 		msg_box = driver.find_element_by_class_name('_3uMse')
 		msg_box.send_keys(msg)
 
@@ -37,6 +38,16 @@ def send_message(name, msg):
 #####
 name_list = ['hassan', 'Group1']
 msg = "hello1"
+# msg = Path('message.txt').read_text()
+# msg = open('message.txt', 'r').readlines()
+# msg = msg.replace("\n", " ")
+with open('message.txt') as f:
+	msg = " ".join([x.strip() for x in f]) 
+print(msg)
+
+with open('group_contact_names.txt') as f:
+    name_list = [line.rstrip() for line in f]
+print(name_list)
 
 swait = WebDriverWait(driver = driver, timeout = 900)
 time.sleep(30)
@@ -50,5 +61,5 @@ for name in name_list:
 	else:
 		print("Done->", name)
 
-time.sleep(120)
+time.sleep(5)
 driver.close()
