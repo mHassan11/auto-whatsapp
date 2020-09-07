@@ -1,6 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.chrome.options import Options
+# import Action chains  
+from selenium.webdriver.common.action_chains import ActionChains 
+# import KEYS 
+from selenium.webdriver.common.keys import Keys 
 
 import time
 from pathlib import Path
@@ -15,6 +19,7 @@ def send_message(name, msg):
 
 	try:
 		user = driver.find_element_by_xpath('//span[@title = "{}"]'.format(name))
+		# print("trying")
 		user.click()
 
 		# print("Writing msg")
@@ -22,6 +27,16 @@ def send_message(name, msg):
 		time.sleep(10)
 		msg_box = driver.find_element_by_class_name('_3uMse')
 		msg_box.send_keys(msg)
+		# msg_box.send_keys(Keys.SHIFT+Keys.ENTER)
+		# ActionChains(driver).key_down(Keys.SHIFT).key_down(Keys.ENTER).key_up(Keys.ENTER).key_up(Keys.SHIFT).perform()
+		
+		# create action chain object 
+		# action = ActionChains(driver)
+		# perform the oepration 
+		# action.key_down(Keys.CONTROL).key_down(Keys.ENTER).key_up(Keys.ENTER).key_up(Keys.CONTROL).perform() 
+
+		# msg_box.send_keys("Automated Message")
+		# print("here, done typing")
 
 		# print("Pressing send button")
 		time.sleep(5)
@@ -45,8 +60,10 @@ with open('arguments.txt') as f:
 msg_file = arg_list[0]+'.txt'
 contact_file = arg_list[1]+'.txt'
 
+break_line = "                                                  "
+brk_line = break_line + break_line + break_line
 with open(msg_file) as f:
-	msg = " ".join([x.strip() for x in f]) 
+	msg = brk_line.join([x.strip() for x in f]) 
 # print(msg)
 
 with open(contact_file) as f:
@@ -63,6 +80,7 @@ for name in name_list:
 		# print("Not done->", name,". Will try again")
 		name = name_list.append(name)
 	else:
+		# pass
 		print("Done->", name)
 
 time.sleep(5)
