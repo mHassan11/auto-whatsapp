@@ -45,6 +45,7 @@ OR
 ```
 python3 whatsapp_group_tool.py
 ```
+
 **NOTE**: Step 1 and 3 are case sensitve. Be carefull!!
 
 ### More
@@ -60,6 +61,7 @@ python3 whatsapp_group_tool.py
 - [ ] Adding a pythonic interface for receving messages
 
 If you have any issues or suggestions, [please submit an issue on GitHub](https://github.com/mHassan11/auto-whatsapp/issues) or [email me](mailto:mhassan.3939@gmail.com). 
+
 [**All contributions are appreciated!**](https://github.com/mHassan11/auto-whatsapp)
 
-![](http://gph.is/1sEZ3jm)
+![](https://media.giphy.com/media/nURzWHsOTpDDa/giphy.gif)
