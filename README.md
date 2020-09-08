@@ -62,6 +62,7 @@ python3 whatsapp_group_tool.py
 
 If you have any issues or suggestions, [please submit an issue on GitHub](https://github.com/mHassan11/auto-whatsapp/issues) or [email me](mailto:mhassan.3939@gmail.com). 
 
-[**All contributions are appreciated!**](https://github.com/mHassan11/auto-whatsapp)
+### Contributions
+[**All contributions are appreciated!**](https://github.com/mHassan11/auto-whatsapp) :blush:
 
-![](https://media.giphy.com/media/nURzWHsOTpDDa/giphy.gif)
+![](https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif)
